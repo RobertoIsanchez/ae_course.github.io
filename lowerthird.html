@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* =========================================
+           CONFIGURACIÓN GLOBAL ESTRICTA
+           ========================================= */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; /* Cero barras de desplazamiento */
+          /*  background-color: #00FF00; /* Pantalla verde para croma */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Contenedor principal con flexbox dinámico */
+        .ui-container {
+            width: 100vw;
+            height: 100vh;
+            padding: 5vw; /* Padding relativo (sin px) */
+            box-sizing: border-box;
+            display: flex;
+            align-items: center; /* Alineación inferior */
+            justify-content: center; /* Alineación izquierda */
+        }
+
+        /* Envoltorio del Lower Third */
+        .lower-third-wrapper {
+            position: relative;
+            width: 60vw;
+            height: 14vh;
+        }
+
+        /* =========================================
+           ELEMENTOS GEOMÉTRICOS (Con unidades vw/vh)
+           ========================================= */
+           
+        /* Barra Oscura (Sombra / Base) */
+        .dark-bar {
+            position: absolute;
+            bottom: 0vh;
+            left: 2vw;
+            width: 48vw;
+            height: 4vh;
+            background-color: #1F1F23;
+            transform: skewX(-30deg); /* Inclinación geométrica */
+            z-index: 1;
+            animation: darkBarIn 5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+        }
+
+        /* Barra Blanca (Contenedor principal) */
+        .white-bar {
+            position: absolute;
+            bottom: 3.5vh;
+            left: 3.5vw;
+            width: 48vw;
+            height: 8vh;
+            background-color: #FFFFFF;
+            transform: skewX(-30deg);
+            z-index: 2;
+            overflow: hidden; /* Necesario para contener el brillo */
+            box-shadow: 0.5vw 0.5vh 1.5vw rgba(0,0,0,0.15);
+            animation: whiteBarIn 5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+        }
+
+        /* Efecto de Brillo/Reflejo sobre la barra blanca */
+        .white-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 38%;
+            width: 10vw;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(145, 70, 255, 0.2), transparent);
+            transform: skewX(20deg);
+            animation: shimmerEffect 5s linear infinite;
+        }
+
+        /* Pliegue del listón morado (Efecto 3D) */
+        .purple-fold {
+            position: absolute;
+            bottom: 1vh;
+            left: 0.2vw;
+            width: 2vw;
+            height: 3vh;
+            background-color: #5C16C5; /* Morado oscuro */
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+            z-index: 3;
+            animation: foldIn 5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+        }
+
+        /* Listón Morado (Logo) */
+        .purple-ribbon {
+            position: absolute;
+            bottom: 2vh;
+            left: 0vw;
+            width: 8vw;
+            height: 11vh;
+            background-color: #9146FF; /* Color Twitch */
+            transform: skewX(-30deg);
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0.5vw 0.5vh 1vw rgba(0,0,0,0.3);
+            animation: purpleRibbonIn 5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+        }
+
+        /* =========================================
+           CONTENIDOS (Textos e Icono)
+           ========================================= */
+           
+        /* Icono SVG: Deshacemos la inclinación del padre */
+        .icon-svg {
+            transform: skewX(30deg);
+            width: 4.5vw;
+            height: 4.5vw;
+            fill: #FFFFFF;
+        }
+
+        /* Contenedor de Texto (Independiente para no heredar skew) */
+        .text-container {
+            position: absolute;
+            bottom: 3.5vh;
+            left: 15vw;
+            width: 40vw;
+            height: 8vh;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 2.5vw;
+            animation: textIn 5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+        }
+
+        .title-text {
+            font-size: 2.5vw;
+            font-weight: 900;
+            color: #1F1F23;
+            margin: 0;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -0.05vw;
+        }
+
+        .subtitle-text {
+            font-size: 1.1vw;
+            font-weight: 700;
+            color: #9146FF;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.15vw;
+        }
+
+        /* =========================================
+           ANIMACIONES (Bucle de 5 Segundos)
+           ========================================= */
+
+        /* Barra Oscura (Base) */
+        @keyframes darkBarIn {
+            0% { transform: translateX(-60vw) skewX(-30deg); opacity: 0; }
+            10%, 92% { transform: translateX(0vw) skewX(-30deg); opacity: 1; }
+            100% { transform: translateX(-60vw) skewX(-30deg); opacity: 0; }
+        }
+
+        /* Barra Blanca */
+        @keyframes whiteBarIn {
+            0%, 4% { transform: translateX(-60vw) skewX(-30deg); opacity: 0; }
+            14%, 88% { transform: translateX(0vw) skewX(-30deg); opacity: 1; }
+            96%, 100% { transform: translateX(-60vw) skewX(-30deg); opacity: 0; }
+        }
+
+        /* Listón Morado */
+        @keyframes purpleRibbonIn {
+            0%, 8% { transform: translateX(-60vw) skewX(-30deg); opacity: 0; }
+            18%, 84% { transform: translateX(0vw) skewX(-30deg); opacity: 1; }
+            92%, 100% { transform: translateX(-60vw) skewX(-30deg); opacity: 0; }
+        }
+
+        /* Pliegue 3D (Aparece justo al estabilizarse el listón para evitar recortes raros) */
+        @keyframes foldIn {
+            0%, 17% { opacity: 0; }
+            18%, 84% { opacity: 1; }
+            85%, 100% { opacity: 0; }
+        }
+
+        /* Textos (Fade y leve slide) */
+        @keyframes textIn {
+            0%, 16% { opacity: 0; transform: translateX(-2vw); }
+            24%, 80% { opacity: 1; transform: translateX(0vw); }
+            88%, 100% { opacity: 0; transform: translateX(2vw); }
+        }
+
+        /* Brillo recorriendo la barra blanca (ocurre a mitad del tiempo de espera) */
+        @keyframes shimmerEffect {
+            0%, 35% { left: -10vw; opacity: 0; }
+            36% { opacity: 1; }
+            55% { left: 60vw; opacity: 1; }
+            56%, 100% { left: 60vw; opacity: 0; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="ui-container">
+        <div class="lower-third-wrapper">
+            
+            <div class="dark-bar"></div>
+            <div class="white-bar"></div>
+            <div class="purple-fold"></div>
+
+            <div class="purple-ribbon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon-svg">
+                    <path d="M4.265 3L3 6.236v13.223h5.504v3.54H11.53l3.54-3.54h4.43L24 14.93V3H4.265zm18.044 11.17l-3.54 3.54h-4.43l-3.54 3.54v-3.54H6.38V4.69h15.93v9.48z"/>
+                    <path d="M12.96 11.78V7.99h1.77v3.79h-1.77zm4.425 0V7.99h1.77v3.79h-1.77z"/>
+                </svg>
+            </div>
+
+            <div class="text-container">
+                <h1 class="title-text">Roberto Sánchez</h1>
+                <h2 class="subtitle-text">Graphic Designer</h2>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

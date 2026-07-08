@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering After Effects — De Principiante a Experto | Capacitación Presencial</title>
+    <meta name="description" content="Domina Adobe After Effects desde cero hasta nivel experto. Capacitación presencial con proyectos reales: Motion Graphics, VFX, Composición 3D y más.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- PARTICLE CANVAS – fixed above all -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- ══════════════════════════════════════════
+         NAVBAR
+    ══════════════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo">
+            -->
+        </div>
+        <ul class="nav-links">
+            <li><a href="#niveles">Temario</a></li>
+            <li><a href="#para-quien">Para quién</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="https://www.behance.net/robertoi" target="_blank" class="nav-cta" id="nav-cta-btn">APRENDER AHORA</a></li>
+        </ul>
+    </nav>
+
+    <!-- ══════════════════════════════════════════
+         HERO: VIDEO FULLSCREEN (fixed behind)
+    ══════════════════════════════════════════ -->
+    <div class="hero-video-bg" id="hero-video-bg">
+        <video class="hero-video" id="hero-video" autoplay loop muted playsinline>
+            <source src="RobertoSanchez_MotionReel.webm" type="video/webm">
+        </video>
+        <!-- Fade top → navbar area -->
+        <div class="vfade vfade-top"></div>
+        <!-- Fade bottom → content overlay -->
+        <div class="vfade vfade-bottom"></div>
+    </div>
+
+    <!-- Hero spacer + content overlay on the video -->
+    <section class="hero" id="hero">
+        <!-- intentionally empty – just a transparent spacer so content starts after the video -->
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         MAIN CONTENT WRAPPER (scrolls over video)
+    ══════════════════════════════════════════ -->
+    <main class="page-content" id="page-content">
+
+        <!-- ─── TITLE BLOCK ─── -->
+        <div class="title-block">
+            <p class="eyebrow" id="eyebrow">CAPACITACIÓN PRESENCIAL · INICIO PRÓXIMO</p>
+            <h1 class="main-title" id="main-title">
+                <span class="t-white">DOMINA</span><br>
+                <span class="t-green">AFTER EFFECTS</span>
+            </h1>
+            <p class="main-sub" id="main-sub">
+                Eso <em>desafiante</em> de la animación ya no te intimidará.<br>
+                VFX complicados. 3D. Ilustraciones. Domina eso que te complica al máximo.
+            </p>
+            <div class="hero-actions" id="hero-actions">
+                <a href="https://www.behance.net/robertoi" target="_blank" class="btn-primary" id="hero-cta">APRENDER AHORA</a>
+                <a href="#niveles" class="btn-ghost">Ver temario</a>
+            </div>
+        </div>
+
+        <!-- ─── STATS BAR ─── -->
+        <div class="stats-bar" id="stats-bar">
+            <div class="stat-item">
+                <div class="stat-top">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span class="stat-num" data-target="120">0</span>
+                    <span class="stat-plus">+</span>
+                    <i class="fa-solid fa-clock" style="font-size:1rem;opacity:0.5;"></i>
+                </div>
+                <p class="stat-label">HORAS DE TEMARIO</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-top">
+                    <i class="fa-solid fa-bars-progress"></i>
+                    <span class="stat-num" data-target="3">0</span>
+                    <i class="fa-solid fa-medal" style="font-size:1rem;opacity:0.5;"></i>
+                </div>
+                <p class="stat-label">NIVELES DE APRENDIZAJE</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-top">
+                    <i class="fa-solid fa-check-to-slot"></i>
+                    <span class="stat-num" data-target="4">0</span>
+                    <i class="fa-solid fa-pen-ruler" style="font-size:1rem;opacity:0.5;"></i>
+                </div>
+                <p class="stat-label">COMPLETAMENTE PRÁCTICO &amp; PRESENCIAL</p>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════
+             SECTION: TRES NIVELES
+        ══════════════════════════════════════════ -->
+        <section id="niveles" class="section section-niveles">
+            <div class="section-header">
+                <p class="section-eyebrow">ELIGE TU NIVEL DE PARTIDA</p>
+                <h2 class="section-heading">TRES NIVELES</h2>
+                <p class="section-sub">Cada etapa te lleva al siguiente escalón con proyectos de portafolio reales.</p>
+            </div>
+
+            <div class="cards-container">
+
+                <!-- CARD 1 -->
+                <div class="card-wrap">
+                    <div class="card-scene">
+                        <div class="card" id="card-1">
+                            <!-- FRONT -->
+                            <div class="card-face card-front">
+                                <img src="badge_nivel1.png" alt="Nivel I - Principiante" class="card-lvl-badge">
+                                <div class="card-glow glow-purple"></div>
+                                <div class="card-img-wrap">
+                                    <img src="L_1.png" alt="Nivel Principiante" class="card-graphic">
+                                    <div class="card-img-overlay ov-purple"></div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="card-lvl-tag c-purple">PRINCIPIANTE</span>
+                                    <h3 class="card-title">FUNDAMENTOS<br>&amp; MOVIMIENTO</h3>
+                                    <p class="card-desc">Interfaces, keyframes, shape layers, máscaras y exportación.</p>
+                                    <span class="card-hint"><i class="fa-solid fa-rotate"></i> VER TEMARIO</span>
+                                </div>
+                                <div class="card-stripe s-purple"></div>
+                            </div>
+                            <!-- BACK -->
+                            <!-- BACK: Módulos detallados Nivel I -->
+                            <div class="card-face card-back b-purple">
+                                <div class="back-head">
+                                    <small>NIVEL I · PRINCIPIANTE</small>
+                                    <h3>TEMARIO</h3>
+                                </div>
+                                <div class="back-modules">
+
+                                    <div class="mod-item">
+                                        <span class="mod-num">01</span>
+                                        <div class="mod-content">
+                                            <strong>Introducción a After Effects</strong>
+                                            <ul>
+                                                <li>¿Qué es AE y para qué se utiliza?</li>
+                                                <li>Recorrido por la interfaz y paneles</li>
+                                                <li>Configuración del espacio de trabajo</li>
+                                                <li>Preferencias básicas del programa</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="mod-item">
+                                        <span class="mod-num">02</span>
+                                        <div class="mod-content">
+                                            <strong>Creación y Gestión de Composiciones</strong>
+                                            <ul>
+                                                <li>Concepto de composición</li>
+                                                <li>Crear nuevas composiciones</li>
+                                                <li>Importar archivos multimedia</li>
+                                                <li>Organización de elementos</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="mod-item">
+                                        <span class="mod-num">03</span>
+                                        <div class="mod-content">
+                                            <strong>Capas, Transformación y Keyframes</strong>
+                                            <ul>
+                                                <li>Tipos de capas en After Effects</li>
+                                                <li>Propiedades de transformación</li>
+                                                <li>Animación básica con Keyframes</li>
+                                                <li>Jerarquía de capas (Parenting)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="mod-item">
+                                        <span class="mod-num">04</span>
+                                        <div class="mod-content">
+                                            <strong>Animación de Texto y Efectos Básicos</strong>
+                                            <ul>
+                                                <li>Herramienta de texto y panel Carácter</li>
+                                                <li>Animadores de texto</li>
+                                                <li>Efectos comunes: Desenfoque, brillo, tinte</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="mod-item">
+                                        <span class="mod-num">05</span>
+                                        <div class="mod-content">
+                                            <strong>Previsualización y Exportación</strong>
+                                            <ul>
+                                                <li>Previsualización de RAM</li>
+                                                <li>Panel de Cola de Procesamiento</li>
+                                                <li>Formatos de exportación básicos</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <span class="back-flip-hint"><i class="fa-solid fa-rotate"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="card-wrap">
+                    <div class="card-scene">
+                        <div class="card" id="card-2">
+                            <div class="card-face card-front">
+                                <img src="badge_nivel2.png" alt="Nivel II - Intermedio" class="card-lvl-badge">
+                                <div class="card-glow glow-blue"></div>
+                                <div class="card-img-wrap">
+                                    <img src="L_2.png" alt="Nivel Intermedio" class="card-graphic">
+                                    <div class="card-img-overlay ov-blue"></div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="card-lvl-tag c-blue">INTERMEDIO</span>
+                                    <h3 class="card-title">COMPOSICIÓN<br>3D &amp; TRACKING</h3>
+                                    <p class="card-desc">Cámaras, Mocha AE, Roto Brush, expresiones y chroma key.</p>
+                                    <span class="card-hint"><i class="fa-solid fa-rotate"></i> VER TEMARIO</span>
+                                </div>
+                                <div class="card-stripe s-blue"></div>
+                            </div>
+                            <!-- BACK: Módulos detallados Nivel II -->
+                            <div class="card-face card-back b-blue">
+                                <div class="back-head">
+                                    <small>NIVEL II · INTERMEDIO</small>
+                                    <h3>TEMARIO</h3>
+                                </div>
+                                <div class="back-modules">
+
+                                    <div class="mod-item">
+                                        <span class="mod-num">01</span>
+                                        <div class="mod-content">
+                                            <strong>Animación Avanzada y Editor de Gráficos</strong>
+                                            <ul>
+                                                <li>Curvas de velocidad en el Editor de Gráficos</li>
+                                                <li>Tipos de interpolación de keyframes</li>
+                                                <li>Animación de propiedades de forma</li>
+                                                <li>Introducción a las expresiones</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="mod-item">
+                                        <span class="mod-num">02</span>
+                                        <div class="mod-content">
+                                            <strong>Máscaras, Mates y Capas de Ajuste</strong>
+                                            <ul>
+                                                <li>Creación y edición de máscaras</li>
+                                                <li>Modos de máscara</li>
+                                                <li>Mates de seguimiento (Track Mattes)</li>
+                                                <li>Capas de ajuste y precomposiciones</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="mod-item">
+                                        <span class="mod-num">03</span>
+                                        <div class="mod-content">
+                                            <strong>Corrección de Color y VFX Básicos</strong>
+                                            <ul>
+                                                <li>Herramientas de corrección de color</li>
+                                                <li>Conceptos básicos de gradación</li>
+                                                <li>Tracking de movimiento</li>
+                                                <li>Estabilización de metraje</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="mod-item">
+                                        <span class="mod-num">04</span>
+                                        <div class="mod-content">
+                                            <strong>Introducción al 3D en After Effects</strong>
+                                            <ul>
+                                                <li>Capas 3D: Activación y manipulación</li>
+                                                <li>Cámaras: Creación y animación</li>
+                                                <li>Luces: Tipos y propiedades</li>
+                                                <li>Sombras y oclusión ambiental</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <span class="back-flip-hint"><i class="fa-solid fa-rotate"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="card-wrap">
+                    <div class="card-scene">
+                        <div class="card" id="card-3">
+                            <div class="card-face card-front">
+                                <img src="badge_nivel3.png" alt="Nivel III - Avanzado" class="card-lvl-badge">
+                                <div class="card-glow glow-green"></div>
+                                <div class="card-img-wrap">
+                                    <img src="L_3.png" alt="Nivel Avanzado" class="card-graphic">
+                                    <div class="card-img-overlay ov-green"></div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="card-lvl-tag c-green">AVANZADO / EXPERTO</span>
+                                    <h3 class="card-title">VFX, SCRIPTS<br>&amp; LÓGICA</h3>
+                                    <p class="card-desc">Partículas Trapcode, Camera Tracker 3D, expresiones complejas y MOGRTs.</p>
+                                    <span class="card-hint"><i class="fa-solid fa-rotate"></i> VER TEMARIO</span>
+                                </div>
+                                <div class="card-stripe s-green"></div>
+                            </div>
+                            <!-- BACK: Módulos detallados Nivel III -->
+                            <div class="card-face card-back b-green">
+                                <div class="back-head">
+                                    <small>NIVEL III · AVANZADO</small>
+                                    <h3>TEMARIO</h3>
+                                </div>
+                                <div class="back-modules">
+
+                                    <div class="mod-item">
+                                        <span class="mod-num">01</span>
+                                        <div class="mod-content">
+                                            <strong>Composición y VFX Avanzados</strong>
+                                            <ul>
+                                                <li>Rotoscopia avanzada con Rotobrush</li>
+                                                <li>Keying avanzado con Keylight</li>
+                                                <li>Tracking de cámara 3D</li>
+                                                <li>Integración de elementos 3D</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="mod-item">
+                                        <span class="mod-num">02</span>
+                                        <div class="mod-content">
+                                            <strong>Expresiones y Automatización</strong>
+                                            <ul>
+                                                <li>Sintaxis básica de expresiones JavaScript</li>
+                                                <li>Expresiones comunes y útiles</li>
+                                                <li>Controladores de expresiones</li>
+                                                <li>Creación de plantillas MOGRTs</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="mod-item">
+                                        <span class="mod-num">03</span>
+                                        <div class="mod-content">
+                                            <strong>Integración y Flujo de Trabajo</strong>
+                                            <ul>
+                                                <li>Integración con Adobe Premiere Pro</li>
+                                                <li>Integración con Photoshop e Illustrator</li>
+                                                <li>Flujo de trabajo con software 3D</li>
+                                                <li>Gestión avanzada de color y LUTs</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="mod-item">
+                                        <span class="mod-num">04</span>
+                                        <div class="mod-content">
+                                            <strong>Renderizado y Entrega Avanzada</strong>
+                                            <ul>
+                                                <li>Configuraciones de renderizado avanzadas</li>
+                                                <li>Uso de Adobe Media Encoder</li>
+                                                <li>Optimización para diferentes plataformas</li>
+                                                <li>Exportación de pases de render</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <span class="back-flip-hint"><i class="fa-solid fa-rotate"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.cards-container -->
+        </section>
+
+        <!-- ══════════════════════════════════════════
+             SECTION: HECHO PARA CREADORES
+        ══════════════════════════════════════════ -->
+        <section id="para-quien" class="section section-forwho">
+            <div class="forwho-inner">
+
+                <!-- LEFT: Title + Desc + 2×2 audience cards -->
+                <div class="forwho-left">
+                    <p class="section-eyebrow">¿PARA QUIÉN ES?</p>
+                    <h2 class="section-heading left-align">HECHO PARA<br><span class="t-green">CREADORES</span></h2>
+                    <p class="forwho-desc">
+                        Diseñado para diseñadores, editores y creativos que quieren dominar
+                        la herramienta estándar de la industria para motion graphics y VFX.
+                    </p>
+
+                    <!-- 2x2 audience cards -->
+                    <div class="audience-cards">
+
+                        <div class="aud-card">
+                            <div class="aud-icon"><i class="fa-solid fa-seedling"></i></div>
+                            <h4 class="aud-title">Principiantes Absolutos</h4>
+                            <p class="aud-desc">Sin experiencia previa. Empezamos desde cero con la interfaz y los primeros keyframes.</p>
+                        </div>
+
+                        <div class="aud-card">
+                            <div class="aud-icon"><i class="fa-solid fa-film"></i></div>
+                            <h4 class="aud-title">Editores de Video</h4>
+                            <p class="aud-desc">Expande tus servicios con motion graphics y VFX. Multiplica lo que cobras por proyecto.</p>
+                        </div>
+
+                        <div class="aud-card">
+                            <div class="aud-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                            <h4 class="aud-title">Diseñadores Gráficos</h4>
+                            <p class="aud-desc">Da vida a tus ilustraciones y branding. Transiciona al mundo animado y diferénciate.</p>
+                        </div>
+
+                        <div class="aud-card">
+                            <div class="aud-icon"><i class="fa-solid fa-globe"></i></div>
+                            <h4 class="aud-title">Freelance / Fiverr &amp; Upwork</h4>
+                            <p class="aud-desc">Los clientes pagan más por motion. Aprende AE y cierra proyectos que antes rechazabas.</p>
+                        </div>
+
+                    </div><!-- /.audience-cards -->
+                </div><!-- /.forwho-left -->
+
+                <!-- RIGHT: Media — spans full height of left column
+                     ════════════════════════════════════════════
+                     MEDIA OPCIÓN A: VIDEO (activo por defecto)
+                     Cambia el src por el nombre de tu archivo de video.
+                     ════════════════════════════════════════════ -->
+                <div class="forwho-media">
+                       <!-- <video autoplay loop muted playsinline class="side-media">
+                        <source src="1.webm" type="video/webm">
+                    </video>
+                
+                    MEDIA OPCIÓN B: IMAGEN PNG/JPG
+                    Comenta el <video> de arriba y descomenta esta línea:  -->
+                    <img src="creator.png" alt="Referencia visual del curso" class="side-media">
+                  
+                    <div class="media-glow-fx"></div>
+                    <div class="vid-label vid-label-1"><i class="fa-solid fa-wand-magic-sparkles"></i> Como Atrapa</div>
+                    <div class="vid-label vid-label-2"><i class="fa-solid fa-layer-group"></i> Sin Restricciones</div>
+                    <div class="vid-label vid-label-3"><i class="fa-solid fa-rotate"></i> No Es Básico</div>
+                </div><!-- /.forwho-media -->
+
+            </div><!-- /.forwho-inner -->
+        </section>
+
+        <!-- ══════════════════════════════════════════
+             SECTION: PROYECTOS REALES
+        ══════════════════════════════════════════ -->
+        <section id="proyectos" class="section section-projects">
+            <div class="section-header">
+                <p class="section-eyebrow">PROYECTOS REALES</p>
+                <h2 class="section-heading">PROYECTOS REALES</h2>
+                <p class="section-sub">Lo que construirás al terminar cada nivel.</p>
+            </div>
+            <div class="project-grid">
+
+                <!-- ─────────────────────────────────────────────
+                     EJEMPLO 1: MEDIA TIPO → VIDEO
+                     Usa <video> con autoplay, loop y muted.
+                     Ideal para mostrar animaciones en loop.
+                ───────────────────────────────────────────── -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <video autoplay loop muted playsinline>
+                            <source src="animatioan.webm" type="video/webm">
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h4>Motion Design Sample</h4>
+                        <p>Animaciones fluidas y transiciones cinematográficas de nivel profesional.</p>
+                    </div>
+                </div>
+
+                <!-- ─────────────────────────────────────────────
+                     EJEMPLO 2: MEDIA TIPO → HTML / IFRAME
+                     Usa <iframe> para incrustar un archivo .html
+                     con animaciones CSS/JS (ej. lower thirds, HUDs).
+                     Crea tu archivo y cambia src="lowerthird.html"
+                ───────────────────────────────────────────── -->
+                <div class="project-card">
+                    <div class="project-media project-media--frame">
+                        <iframe src="lowerthird.html" scrolling="no" title="Lower Third"></iframe>
+                    </div>
+                    <div class="project-info">
+                        <h4>Lower Third Dinámico</h4>
+                        <p>Cintillo animado en HTML/CSS exportable, listo para integrarse en producción.</p>
+                    </div>
+                </div>
+
+                <!-- ─────────────────────────────────────────────
+                     EJEMPLO 3: MEDIA TIPO → IMAGEN
+                     Usa <img> normal. Perfecto para stills,
+                     renders o capturas de pantalla del proyecto.
+                     Cambia src="placeholder.png" por tu imagen.
+                ───────────────────────────────────────────── -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <img src="L_1.png" alt="Kinetic Typography">
+                    </div>
+                    <div class="project-info">
+                        <h4>Kinetic Typography</h4>
+                        <p>Tipografía animada con expresiones y curvas de velocidad profesionales.</p>
+                    </div>
+                </div>
+
+                <!-- ─────────────────────────────────────────────
+                     EJEMPLO 4: MEDIA TIPO → LOTTIE JSON
+                     Usa <lottie-player> para incrustar animaciones
+                     exportadas de After Effects como archivo .json
+                     (con el plugin Bodymovin / LottieFiles).
+
+                     CÓMO USARLO:
+                     1. Exporta tu animación AE con el plugin Bodymovin
+                        o descarga un .json de lottiefiles.com
+                     2. Pon el archivo (ej. data.json) en esta carpeta
+                     3. Cambia  src="data.json"  al nombre de tu archivo
+                     4. Ajusta background, speed y si es loop o not
+
+                     PARA AGREGAR MÁS CARDS LOTTIE:
+                     Copia este bloque y cambia src + texto.
+                ───────────────────────────────────────────── -->
+                <div class="project-card">
+                    <div class="project-media project-media--lottie">
+                        <!--
+                        ══════════════════════════════════════════════
+                        LOTTIE: cambia src por tu archivo .json
+                        background: "transparent" = fondo del card
+                                    "#0a0a0e"     = color personalizado
+                        speed: "1" = velocidad normal, "0.5" = lento
+                        loop / autoplay = activos por defecto
+                        ══════════════════════════════════════════════
+                        -->
+                        <lottie-player
+                            src="data.json"
+                            background="transparent"
+                            speed="1"
+                            loop
+                            autoplay>
+                        </lottie-player>
+                    </div>
+                    <div class="project-info">
+                        <h4>MG Animación</h4>
+                        <p>Motion Graphics completos listos para portafolio y presentación a clientes.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+             SECTION: PRECIO / CTA
+        ══════════════════════════════════════════ -->
+        <section id="precio" class="section section-pricing">
+            <div class="pricing-inner">
+                <p class="section-eyebrow">ELIGE TU PLAN</p>
+
+                <!-- Pricing two-column card -->
+                <div class="pricing-two-col">
+
+                    <!-- LEFT: Curso Completo -->
+                    <div class="pricing-plan plan-main">
+                        <p class="plan-eyebrow">CURSO COMPLETO</p>
+                        <h2 class="pricing-label">INVERSIÓN</h2>
+                        <div class="price-row">
+                            <span class="price-dollar">$</span>
+                            <span class="price-amount" id="price-num">4,500</span>
+                            <span class="price-mxn">MXN</span>
+                        </div>
+                        <p class="price-note">Pago único · acceso completo a los 3 niveles · material incluido</p>
+                        <ul class="plan-features">
+                            <li><i class="fa-solid fa-circle-check"></i> 120+ horas de clase presencial</li>
+                            <li><i class="fa-solid fa-circle-check"></i> 12 proyectos de portafolio</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Material y recursos incluidos</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Constancia de participación</li>
+                        </ul>
+                        <a href="https://www.behance.net/robertoi" target="_blank" class="btn-primary btn-xl" id="enroll-btn">APRENDER AHORA</a>
+                    </div>
+
+                    <!-- DIVIDER -->
+                    <div class="pricing-divider"></div>
+
+                    <!-- RIGHT: Mentoría -->
+                    <div class="pricing-plan plan-mentoring">
+                        <p class="plan-eyebrow">MENTORÍA INDIVIDUAL</p>
+                        <h2 class="pricing-label mentor-label">SESIÓN</h2>
+                        <div class="price-row">
+                            <span class="price-dollar">$</span>
+                            <span class="price-amount mentor-price">250</span>
+                            <div class="price-mxn-stack">
+                                <span class="price-mxn">MXN</span>
+                                <span class="price-per">/hora</span>
+                            </div>
+                        </div>
+                        <p class="price-note">Sesión 1:1 personalizada a tu proyecto y dudas</p>
+                        <ul class="plan-features">
+                            <li><i class="fa-solid fa-circle-check"></i> Resolución de dudas en vivo</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Revisión de tu trabajo actual</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Consejos para tu portafolio</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Agenda cuando te convenga</li>
+                        </ul>
+                        <a href="mailto:ivanvaquera2608@gmail.com" class="btn-ghost btn-mentor">AGENDAR SESIÓN</a>
+                    </div>
+
+                </div><!-- /.pricing-two-col -->
+
+                <!-- CTA block -->
+                <div class="cta-double">
+                    <p class="section-eyebrow" style="margin-bottom:10px;">TIENES UN LUGAR</p>
+                    <h2 class="cta-heading">COMIENZA HOY</h2>
+                    <p class="cta-sub">En pocas semanas estarás creando animaciones que antes te parecían imposibles.</p>
+                    <div class="cta-btns">
+                        <a href="https://www.behance.net/robertoi" target="_blank" class="btn-primary btn-xl">APRENDER AHORA</a>
+                        <a href="#niveles" class="btn-ghost">Ver temario y niveles</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+             FOOTER
+        ══════════════════════════════════════════ -->
+        <footer class="footer">
+            <div class="footer-top">
+
+                <!-- COLUMNA 1: Logo + Info -->
+                <div class="footer-col footer-col-brand">
+                    <!--
+                    ════════════════════════════════════════════
+                    LOGO OPCIÓN A: Texto (activo por defecto)
+                    ════════════════════════════════════════════
+                    -->
+                    <!-- Logo Dreamport en footer (off-white para fondo oscuro) -->
+                    <div class="footer-logo-wrap">
+                        <img src="logos_DP/DP-Logo-full-off-white.png"
+                             alt="Dreamport"
+                             class="footer-logo-img"
+                             style="height:42px; opacity:0.85;">
+                    </div>
+                     <p class="footer-brand-name"> </p> 
+                    <address class="footer-address">
+                        Capacitación Presencial<br>
+                        Motion Graphics &amp; VFX<br>
+                        Saltillo, Coahuila, México
+                    </address>
+                </div>
+
+                <!-- COLUMNA 2: Contacto -->
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-col-title">Contáctanos</h4>
+                    <p class="footer-col-desc">¿Tienes preguntas? Escíbenos y con gusto te orientamos sobre el curso.</p>
+                    <div class="footer-contact-links">
+                        <a href="mailto: placeholder.com" class="footer-contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            placeholder@gmail.com
+                        </a>
+                        <a href="https://www.behance.net/robertoi" target="_blank" class="footer-contact-item">
+                            <i class="fa-brands fa-behance"></i>
+                            Portafolio en Behance
+                        </a>
+                    </div>
+                </div>
+
+                <!-- COLUMNA 3: Redes sociales -->
+                <div class="footer-col footer-col-social">
+                    <h4 class="footer-col-title">Síguenos</h4>
+                    <div class="footer-social-grid">
+                        <a href="#" class="footer-social-item">
+                            <i class="fa-brands fa-instagram"></i> Instagram
+                        </a>
+                        <a href="#" class="footer-social-item">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="#" class="footer-social-item">
+                            <i class="fa-brands fa-facebook"></i> Facebook
+                        </a>
+                        <a href="#" class="footer-social-item">
+                            <i class="fa-brands fa-tiktok"></i> TikTok
+                        </a>
+                        <a href="#" class="footer-social-item">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="https://www.behance.net/robertoi" target="_blank" class="footer-social-item">
+                            <i class="fa-brands fa-behance"></i> Behance
+                        </a>
+                    </div>
+                </div>
+
+            </div><!-- /.footer-top -->
+
+            <div class="footer-hr"></div>
+
+            <div class="footer-bottom">
+                <span class="footer-copy">&copy; 2026 Mastering After Effects</span>
+                <a href="mailto: placeholder.com" class="footer-bottom-link">Términos y Condiciones</a>
+                <span class="footer-credit">DREAMPORT</span>
+            </div>
+        </footer>
+
+    </main><!-- /.page-content -->
+
+    <!-- LIBRARIES -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+    <!-- LOTTIE PLAYER (web component oficial de LottieFiles) -->
+    <!-- Permite usar <lottie-player src="archivo.json"> en cualquier tarjeta -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
+
+    <script src="main.js"></script>
+</body>
+</html>
